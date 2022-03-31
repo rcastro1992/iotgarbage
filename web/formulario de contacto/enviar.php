@@ -14,6 +14,6 @@ $contenido ="Nombre" . $Nombre . "\nCorreo:" . $correo . "\nTelefono:" . $telefo
 
 ///////Enviando mensaje
 mail($destino,"Contacto", $asunto, $contenido);
-header('Location:mensaje-de-envio.html')
+header('location:mensaje-de-envio.html')
 
 ?>
