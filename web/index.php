@@ -15,11 +15,16 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
 ));
 
-// Our web handlers
+// Our web handlers: Rutas
 
 $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('index.twig');
+});
+
+$app->get('/nuevaruta', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return "Hola bienvenido a una nueva ruta";
 });
 
 $app->run();
