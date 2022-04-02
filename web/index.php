@@ -26,7 +26,8 @@ $app->get('/nuevaruta/{nombre}', function($nombre) use($app) {
   $app['monolog']->addDebug('logging output.');
 
   if(is_string($nombre)){
-  return "Hola bienvenido a una nueva ruta. Tú nombre es: " . $nombre;
+  $entero= intval($nombre);
+  return "Hola bienvenido a una nueva ruta. Tú nombre es: " . $nombre . " y su entero es: " . $entero;
 }
 else{
 	return "por favor escribe una ruta con la forma nuevaruta/tunombre";
