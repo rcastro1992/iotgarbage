@@ -24,7 +24,13 @@ $app->get('/', function() use($app) {
 
 $app->get('/nuevaruta/{nombre}', function($nombre) use($app) {
   $app['monolog']->addDebug('logging output.');
-  return "Hola bienvenido a una nueva ruta" . $nombre;
+
+  if(is_string($nombre){
+  return "Hola bienvenido a una nueva ruta. Tú nombre es: " . $nombre;
+}
+else{
+	return "por favor escribe una ruta con la forma nuevaruta/tunombre";
+}
 });
 
 $app->run();
