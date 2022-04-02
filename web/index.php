@@ -22,7 +22,7 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 
-$app->get('/nuevaruta/{{nombre}}', function($nombre) use($app) {
+$app->get('/nuevaruta/{nombre}', function($nombre) use($app) {
   $app['monolog']->addDebug('logging output.');
   return "Hola bienvenido a una nueva ruta" . $nombre;
 });
