@@ -34,4 +34,9 @@ else{
 }
 });
 
+$app->post('/post', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return $app['twig']->render('index.twig');
+});
+
 $app->run();
